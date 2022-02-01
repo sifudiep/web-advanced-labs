@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- saved from url=(0107)https://peppel-g.github.io/course-material/courses/web-development-advanced-concepts/files/lab-04-tabs.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lab 4 - Tabs</title>
+	<style>
+		
+		section{
+			background-color: silver;
+			border-radius: 15px;
+			padding: 15px;
+			margin: 5px;
+		}
+		
+		section h1{
+			margin-top: 0;
+		}
+
+		.hidden {
+			display: none;
+		}
+
+		.clickable-link {
+			color: blue;
+			text-decoration: under;
+		}
+		
+	</style>
+	<script>
+		
+		// Write your JavaScript code here.
+		document.addEventListener("DOMContentLoaded", () => {		
+			let sections = document.querySelectorAll("section")
+
+
+			function unhideSection(id) {
+				for (let i = 0; i < sections.length; i++) {
+					if (i == id) {
+						sections[i].classList.remove("hidden")
+					} else {
+						sections[i].classList.add("hidden")
+					}
+				} 
+			}
+
+			let ul = document.createElement("ul")
+
+			let liCreateAccount = document.querySelector("#createAccount")
+			let liSignIn = document.querySelector("#signIn")
+			let liSubscribe = document.querySelector("#subscribe")
+
+			liCreateAccount.addEventListener("click", (e) => {
+				unhideSection(0)
+			})
+
+			liSignIn.addEventListener("click", (e) => {
+				unhideSection(1)
+			})
+
+			liSubscribe.addEventListener("click", (e) => {
+				unhideSection(2)
+			})
+
+		})
+
+	</script>
+</head>
+<body class="vsc-initialized" cz-shortcut-listen="true">
+	
+	<div id="sections">
+		<ul>
+			<li><p class="clickable-link" id="createAccount">Create Account</p></li>
+			<li><p class="clickable-link" id="signIn">Sign In</p></li>
+			<li><p class="clickable-link" id="subscribe">Subscribe</p></li>
+		</ul>
+		<section>
+			<h1>Create account</h1>
+			<p>To use our service you first need to create an account. After you have created an account you can login to it and use our service on any computer with a web browser.</p>
+			<form data-bitwarden-watching="1">
+				<div>Username: <input type="text" name="username"></div>
+				<div>Password: <input type="password" name="password"></div>
+				<input type="submit" value="Create account">
+			</form>
+		</section>
+		
+		<section>
+			<h1>Sign in</h1>
+			<p>To sign in, enter the username and password you entered when you created the account.</p>
+			<form data-bitwarden-watching="1">
+				<div>Username: <input type="text" name="username"></div>
+				<div>Password: <input type="password" name="password"></div>
+				<input type="submit" value="Sign in">
+			</form>
+		</section>
+		
+		<section>
+			<h1>Subscribe</h1>
+			<p>Do you just want to be notified when something new has happened? Then let us know your email and we will send you a message as soon as something interesting has happened.</p>
+			<form>
+				<div>Email: <input type="email" name="email"></div>
+				<input type="submit" value="Subscribe">
+			</form>
+		</section>
+		
+	</div>
+	
+
+<div id="forest-ext-shadow-host"></div></body></html>

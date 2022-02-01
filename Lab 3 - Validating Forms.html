@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- saved from url=(0118)https://peppel-g.github.io/course-material/courses/web-development-advanced-concepts/files/lab-03-form-validation.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lab 3 - Validating Forms</title>
+	<script>
+		
+		// Write your JavaScript code here.
+		// Display the error messages wherever you think it makes most sense.
+		
+
+
+		document.addEventListener("DOMContentLoaded", () => {
+			let email = document.querySelector("#email")
+			let password1 = document.querySelector("#password1")
+			let password2 = document.querySelector("#password2")
+			let errorMessages = document.querySelector("#errorMessage")
+
+			document.addEventListener("submit", (e) => {
+				e.preventDefault()
+				if (!email.value.includes("@")) {
+					errorMessages.innerHTML = "Email does not contain @ symbol..."
+				}
+
+				if (password1.value.length < 8) {
+					errorMessages.innerHTML = "Password is too short, please use a minimum of 8 characters."
+				}
+
+				if (password1.value != password2.value) {
+					errorMessages.innerHTML = "The two passwords are not matching..."
+				}
+			})
+		})
+		
+	</script>
+</head>
+<body class="vsc-initialized" cz-shortcut-listen="true">
+	
+	<h1>Create account</h1>
+	
+	<form id="createAccountForm" method="POST" data-bitwarden-watching="1">
+		
+		<div>Email: <input type="text" name="email" id="email"></div>
+		
+		<div>Password: <input type="password" name="password1" id="password1"></div>
+		
+		<div>Password (repeat): <input type="password" name="password2" id="password2"></div>
+		
+		<input type="submit" value="Create account">
+		
+	</form>
+	<p id="errorMessage"></p>
+
+<div id="forest-ext-shadow-host"></div></body></html>
