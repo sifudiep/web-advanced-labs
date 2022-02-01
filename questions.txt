@@ -1,1 +1,2 @@
 1. Should REST API have 2 separate express docker containers running on 2 different ports?
+- How? Should an extra Dockerfile be inside presentation-layer-rest? Since a Dockerfile already exists in web-application folder.
