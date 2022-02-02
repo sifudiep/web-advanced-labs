@@ -31,7 +31,15 @@
 		
 		// Write your JavaScript code here.
 		document.addEventListener("DOMContentLoaded", () => {		
-			let sections = document.querySelectorAll("section")
+			let sections = document.querySelectorAll("section");
+
+
+            // Hides all sections at startup
+            (() => {
+                for (let i = 0; i < sections.length; i++) {
+                    sections[i].classList.add("hidden")
+                }
+            })()
 
 
 			function unhideSection(id) {

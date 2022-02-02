@@ -1,2 +1,6 @@
+https://peppel-g.github.io/course-material/courses/web-development-advanced-concepts/project-work.html#part-9-adding-a-rest-api
+
 1. Should REST API have 2 separate express docker containers running on 2 different ports?
 - How? Should an extra Dockerfile be inside presentation-layer-rest? Since a Dockerfile already exists in web-application folder.
+
+Can't you just add router for the REST api?

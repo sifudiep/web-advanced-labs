@@ -8,8 +8,6 @@
 		
 		// Write your JavaScript code here.
 		// Display the error messages wherever you think it makes most sense.
-		
-
 
 		document.addEventListener("DOMContentLoaded", () => {
 			let email = document.querySelector("#email")
@@ -21,15 +19,20 @@
 				e.preventDefault()
 				if (!email.value.includes("@")) {
 					errorMessages.innerHTML = "Email does not contain @ symbol..."
+                    return
 				}
 
 				if (password1.value.length < 8) {
 					errorMessages.innerHTML = "Password is too short, please use a minimum of 8 characters."
+                    return
 				}
 
 				if (password1.value != password2.value) {
 					errorMessages.innerHTML = "The two passwords are not matching..."
+                    return
 				}
+
+                errorMessages.innerHTML = "Successfully logged in!"
 			})
 		})
 		
